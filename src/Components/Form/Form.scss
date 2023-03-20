@@ -1,4 +1,4 @@
-$backgroundColor: #efefef;
+$backgroundColor: rgb(122, 220, 122);
 $radius: 40%;
 
 form {
@@ -16,9 +16,12 @@ form {
         margin-right: 1rem;
         padding: .25rem .5rem;
         background: #ccc;
-
+        border-radius:200px 0px;
+        
+        
         &:hover, &.active {
-          background: #fff;
+          background: darken($backgroundColor, 25);
+          color:white;
         }
       }
     }
