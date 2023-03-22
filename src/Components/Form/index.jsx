@@ -20,6 +20,9 @@ function Form(props) {
           <input name='url' type='text' onChange={(event) => setUrl(event.target.value)} />
           <button type="submit">GO!</button>
         </label>
+        {/* <label>json data
+          <textarea rows="4" cols="50" />
+        </label> */}
         <label className="methods">
           <span id="get" onClick={() => setMethod('GET')}>GET</span>
           <span id="post" onClick={() => setMethod('POST')}>POST</span>
