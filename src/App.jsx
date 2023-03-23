@@ -15,6 +15,7 @@ function App() {
     console.log('Component Mounted');
     async function getData() {
       let response = await axios.get(requestParams);
+      console.log(requestParams)
       setData(response.data.results);
     }
     getData();
@@ -31,60 +32,14 @@ function App() {
   return (
     <>
       <Header />
-      <div>Request Method: {requestParams.method}</div>
-      <div>URL: {requestParams.url}</div>
-      <div>Data: {requestParams.json}</div>
+      {/* <div>Request Method: {requestParams.method}</div> */}
+      {/* <div>URL: {requestParams.url}</div> */}
+      {/* <div>Data: {requestParams.json}</div> */}
       <Form handleApiCall={callApi} />
       <Results data={data} loading={loading}/>
       <Footer />
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-//-----Legacy Code-----//
-// class App extends React.Component {
-
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       data: null,
-//       requestParams: {},
-//     };
-//   }
-// //TODO: Lines 19,20 replace values with hooks
-//   callApi = (requestParams) => {
-//     // mock output
-//     const data = {
-//       count: 2,
-//       results: [
-//         {name: 'fake thing 1', url: 'http://fakethings.com/1'},
-//         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
-//       ],
-//     };
-//     this.setState({data, requestParams});
-//   }
-
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <Header />
-//         <div>Request Method: {this.state.requestParams.method}</div>
-//         <div>URL: {this.state.requestParams.url}</div>
-//         <Form handleApiCall={this.callApi} />
-//         <Results data={this.state.data} />
-//         <Footer />
-//       </React.Fragment>
-//     );
-//   }
-// }
 
 export default App;
