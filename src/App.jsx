@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     console.log('Component Mounted');
     async function getData() {
-      let response = await axios.get('');
+      let response = await axios.get(requestParams);
       setData(response.data.results);
     }
     getData();
@@ -33,6 +33,7 @@ function App() {
       <Header />
       <div>Request Method: {requestParams.method}</div>
       <div>URL: {requestParams.url}</div>
+      <div>Data: {requestParams.json}</div>
       <Form handleApiCall={callApi} />
       <Results data={data} loading={loading}/>
       <Footer />

@@ -4,11 +4,13 @@ import './Form.scss';
 function Form(props) {
   const [method, setMethod] = useState('');
   const [url, setUrl] = useState('');
+  const [json, setJson] = useState({});
   let handleSubmit = e => {
     e.preventDefault();
     const formData = {
       method,
       url,
+      json,
     };
     props.handleApiCall(formData);
   }
@@ -20,9 +22,10 @@ function Form(props) {
           <input name='url' type='text' onChange={(event) => setUrl(event.target.value)} />
           <button type="submit">GO!</button>
         </label>
-        {/* <label>json data
+        <label>json data
           <textarea rows="4" cols="50" />
-        </label> */}
+          <input name='url' type='text' onChange={(event) => setJson(event.target.value)} />
+        </label>
         <label className="methods">
           <span id="get" onClick={() => setMethod('GET')}>GET</span>
           <span id="post" onClick={() => setMethod('POST')}>POST</span>
