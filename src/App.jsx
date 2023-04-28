@@ -5,12 +5,13 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Form from './Components/Form';
 import Results from './Components/Results';
-import History from './Components/History';
+// import History from './Components/History';
 
 export const initialState = {
   data: null,
   requestParams: false,
   loading: false,
+  history: [],
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -37,7 +38,7 @@ export const appReducer = (state = initialState, action) => {
       case 'CHANGE_HISTORY':
         return {
           ...state,
-          ...state.history[action.payload],
+          history: [...state.history, action.payload],
         }
     default:
       return state;
@@ -85,7 +86,7 @@ function App() {
       <div>URL: {state.requestParams.url}</div>
       <div>Data: {state.requestParams.data}</div>
       <Form handleApiCall={callApi} />
-      <History history={state.history}changeHistory={changeHistory}/>
+      {/* <History history={state.history}changeHistory={changeHistory}/> */}
       <Results data={state.data} loading={state.loading} />
       <Footer />
     </>

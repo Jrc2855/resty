@@ -29,19 +29,19 @@ const Form = (props) => {
         </label>
         <label className="methods">
           <span
-            onClick={(e) => setMethod(e.target.id)}
+            onClick={(e) => setMethod('get')}
           >READ
           </span>
           <span
-            onClick={(e) => setMethod(e.target.id)}
+            onClick={(e) => setMethod('post')}
           >CREATE
           </span>
           <span
-            onClick={(e) => setMethod(e.target.id)}
+            onClick={(e) => setMethod('put')}
           >UPDATE
           </span>
           <span
-            onClick={(e) => setMethod(e.target.id)}
+            onClick={(e) => setMethod('delete')}
           >
           DELETE
           </span>
